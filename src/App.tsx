@@ -1,12 +1,18 @@
-import './App.css'
+import { SearchBar } from './components/SearchBar/SearchBar';
+import { WeatherCard } from './components/WeatherCard/WeatherCard';
+import { useWeather } from './hooks/useWeather';
+import './App.css';
 
 function App() {
+  const { weatherData, loading, search } = useWeather();
+
   return (
-    <div>
-      <h1>WeatherScope</h1>
-      <p>Weather dashboard - Coming soon</p>
+    <div className="app">
+      <h1 className="title">WeatherScope</h1>
+      <SearchBar onSearch={search} loading={loading} />
+      {weatherData && <WeatherCard data={weatherData} />}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

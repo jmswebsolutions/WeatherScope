@@ -1,0 +1,45 @@
+import { useState } from 'react';
+import type { CombinedWeatherData } from '../types/weather';
+import { searchWeather } from '../services/openMeteo';
+
+export function useWeather() {
+  const [weatherData, setWeatherData] = useState<CombinedWeatherData | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  const validateInput = (cityName: string): boolean => {
+    return cityName.trim().length > 0;
+  };
+
+  const search = async (cityName: string) => {
+    if (!validateInput(cityName)) {
+      return;
+    }
+
+    setLoading(true);
+    setError(false);
+
+    try {
+      const data = await searchWeather(cityName);
+      
+      if (data) {
+        setWeatherData(data);
+      } else {
+        setError(true);
+        setWeatherData(null);
+      }
+    } catch (err) {
+      setError(true);
+      setWeatherData(null);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return {
+    weatherData,
+    loading,
+    error,
+    search,
+  };
+}
