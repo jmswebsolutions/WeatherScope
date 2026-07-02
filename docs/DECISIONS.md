@@ -372,11 +372,163 @@ Define testing strategy. Options:
 
 ---
 
+## ADR-011: Final Styling Decision - CSS Modules
+
+**Date:** 2026-07-02
+**Status:** Accepted
+
+### Context
+Project is currently using CSS Modules for styling. Need to make final decision between CSS Modules and TailwindCSS.
+
+### Decision
+**Keep CSS Modules** as the final styling solution.
+
+### Reasons
+- **Working well:** Current implementation is functional and maintainable
+- **Familiarity:** Traditional CSS is familiar and easy for developers
+- **Performance:** No runtime overhead, CSS is compiled at build time
+- **TypeScript support:** Native support with Vite and CSS Modules
+- **Simplicity:** No additional dependencies or configuration needed
+- **Isolation:** Component-scoped CSS prevents style conflicts
+- **Project scope:** WeatherScope doesn't need complex utility classes
+
+### Consequences
+
+**Positives:**
+- No migration effort required
+- Familiar CSS syntax
+- Optimized performance
+- Component isolation
+- No additional dependencies
+
+**Negatives:**
+- More verbose than TailwindCSS
+- No pre-built utility classes
+- Potential CSS duplication in larger projects
+
+---
+
+## ADR-012: State Management Decision - React Hooks
+
+**Date:** 2026-07-02
+**Status:** Accepted
+
+### Context
+Project is currently using React Hooks (useState, useEffect) for state management. Need to decide if Context API or other state management solutions are necessary.
+
+### Decision
+**Keep React Hooks** without Context API for current project scope.
+
+### Reasons
+- **Sufficient for scope:** WeatherScope has simple state (weatherData, loading, error)
+- **No prop drilling:** Single component tree, no deep nesting
+- **Built-in:** Native React hooks, no external dependencies
+- **Performance:** Adequate for current use case
+- **Simplicity:** Lower complexity, easier to understand
+- **Scalable:** Can add Context API later if needed
+
+### Consequences
+
+**Positives:**
+- No additional dependencies
+- Simpler codebase
+- Better performance for small state
+- Easy to understand and maintain
+
+**Negatives:**
+- Would need refactoring if state grows complex
+- Less tooling than Redux DevTools
+- Potential prop drilling if component tree grows
+
+**Future consideration:**
+- Add Context API if multiple components need access to weather state
+- Consider React Query if API caching becomes necessary
+
+---
+
+## ADR-013: Internationalization Strategy - Portuguese Only
+
+**Date:** 2026-07-02
+**Status:** Accepted
+
+### Context
+Project currently uses Portuguese for weather descriptions and UI text. Need to decide on internationalization strategy.
+
+### Decision
+**Keep Portuguese-only** for current version, with architecture ready for future i18n.
+
+### Reasons
+- **Target audience:** Primary audience is Portuguese-speaking
+- **Simplicity:** No additional i18n library or complexity needed
+- **Focus:** Core functionality over multi-language support
+- **Performance:** No translation overhead
+- **Maintenance:** Single language reduces maintenance burden
+- **API:** Open-Meteo supports Portuguese, already configured
+
+### Consequences
+
+**Positives:**
+- Simpler codebase
+- No additional dependencies
+- Faster development
+- Better performance
+- Easier maintenance
+
+**Negatives:**
+- Limited to Portuguese-speaking users
+- Would need refactoring for multi-language support
+- Smaller potential user base
+
+**Future consideration:**
+- Add i18n library (react-i18next) if multi-language support needed
+- Structure translation files for English, Spanish, etc.
+- Consider language detection based on browser settings
+
+---
+
+## ADR-014: Deploy Platform - GitHub Pages
+
+**Date:** 2026-07-02
+**Status:** Accepted
+
+### Context
+Need to decide on hosting platform for the application. Options include GitHub Pages, Vercel, Netlify, and custom hosting.
+
+### Decision
+**Use GitHub Pages** as the hosting platform with custom domain integration.
+
+### Reasons
+- **Free:** No hosting costs
+- **Integrated:** Native GitHub integration with Actions
+- **Automated:** CI/CD already configured with GitHub Actions
+- **Reliable:** GitHub infrastructure
+- **Custom domain:** Supports custom domains (jmswebsolutions.com.br)
+- **HTTPS:** Automatic SSL certificates
+- **Consistent:** Matches other projects in portfolio
+
+### Consequences
+
+**Positives:**
+- Zero hosting costs
+- Automated deployment
+- Custom domain support
+- SSL certificates included
+- Consistent with existing workflow
+- GitHub integration
+
+**Negatives:**
+- Limited to static sites
+- Build time limits on free tier
+- Less flexible than Vercel/Netlify for advanced features
+- GitHub Pages downtime (rare)
+
+**Configuration:**
+- GitHub Actions workflow for automatic build and deploy
+- Custom domain: jmswebsolutions.com.br/WeatherScope
+- Base path configured in vite.config.ts
+
+---
+
 ## Pending Decisions
 
-The following decisions will be made as the project evolves:
-
-- **Final styling:** CSS Modules vs TailwindCSS (final decision)
-- **State Management:** Whether Context API will be necessary
-- **Internationalization:** Strategy for multiple languages
-- **Deploy:** Hosting platform (Vercel, Netlify, etc.)
+All major architectural decisions have been made. Future decisions will be documented as new features are added.
