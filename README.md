@@ -29,13 +29,12 @@ src/
 ├── components/      # React components
 │   ├── SearchBar/   # City search input
 │   └── WeatherCard/ # Weather display card
-├── services/        # API integration
-│   └── openMeteo.ts # Open-Meteo API service
-├── utils/           # Utility functions
+├── services/        # API integration and data layer
+│   ├── openMeteo.ts # Open-Meteo API service
+│   └── weather.ts   # Weather data types
+├── utils/           # Global utility functions
 │   ├── weatherCode.ts    # Weather code descriptions
 │   └── windDirection.ts  # Wind direction conversion
-├── types/           # TypeScript definitions
-│   └── weather.ts   # Weather data types
 ├── hooks/           # Custom React hooks
 │   └── useWeather.ts # Weather state management
 ├── App.tsx          # Main application component
@@ -87,13 +86,13 @@ npm run preview
 
 ## Architecture
 
-WeatherScope follows a layered architecture:
+WeatherScope follows a layered architecture with unidirectional dependencies:
 
-- **Types Layer:** TypeScript interfaces and type definitions
-- **Service Layer:** API integration and data fetching
-- **Utils Layer:** Pure utility functions
-- **Business Logic Layer:** Custom React hooks
-- **Presentation Layer:** React components
+- **Presentation Layer:** React components (depend on Business Logic)
+- **Business Logic Layer:** Custom hooks and services (depend on Data)
+- **Data Layer:** Types and API calls (base layer)
+
+**Note:** Utils are global helpers, not a layer. They can be used by any layer.
 
 For detailed architecture documentation, see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 

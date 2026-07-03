@@ -153,6 +153,7 @@ We need a weather data API. Options:
 
 **Date:** 2026-06-29
 **Status:** Accepted
+**Updated:** 2026-07-03
 
 ### Context
 Define the project architecture. Options:
@@ -162,14 +163,16 @@ Define the project architecture. Options:
 - MVC
 
 ### Decision
-**Adopt simplified layered architecture:**
+**Adopt simplified layered architecture with unidirectional dependencies:**
 - Presentation Layer (React Components)
-- Business Logic (Custom Hooks)
-- Service Layer (API)
-- Utils Layer (Pure functions)
+- Business Logic Layer (Custom Hooks, Services)
+- Data Layer (Types, API calls)
+
+**Note:** Utils are helpers, not a layer. They are global utilities that can be used by any layer.
 
 ### Reasons
 - **Separation of Concerns:** Each layer with single responsibility
+- **Unidirectional Dependencies:** Upper layers depend only on lower layers
 - **Testability:** Layers can be tested independently
 - **Maintainability:** Easy to locate and modify code
 - **Scalability:** Add features without affecting other layers
@@ -182,11 +185,15 @@ Define the project architecture. Options:
 - Simpler unit tests
 - Code reuse between layers
 - Easy to add new features
+- Clear dependency flow
 
 **Negatives:**
 - More files and directories
 - Slight abstraction overhead
 - Learning curve for new developers
+
+### Dependency Flow
+Presentation → Business Logic → Data (unidirectional)
 
 ---
 
@@ -446,24 +453,25 @@ Project is currently using React Hooks (useState, useEffect) for state managemen
 
 ---
 
-## ADR-013: Internationalization Strategy - Portuguese Only
+## ADR-013: Internationalization Strategy - English Only
 
 **Date:** 2026-07-02
 **Status:** Accepted
+**Updated:** 2026-07-03
 
 ### Context
-Project currently uses Portuguese for weather descriptions and UI text. Need to decide on internationalization strategy.
+Project initially used Portuguese for weather descriptions and UI text. Need to decide on internationalization strategy.
 
 ### Decision
-**Keep Portuguese-only** for current version, with architecture ready for future i18n.
+**Use English-only** for current version, with architecture ready for future i18n.
 
 ### Reasons
-- **Target audience:** Primary audience is Portuguese-speaking
+- **Global audience:** English is the most widely understood language
 - **Simplicity:** No additional i18n library or complexity needed
 - **Focus:** Core functionality over multi-language support
 - **Performance:** No translation overhead
 - **Maintenance:** Single language reduces maintenance burden
-- **API:** Open-Meteo supports Portuguese, already configured
+- **API:** Open-Meteo supports English, configured
 
 ### Consequences
 
@@ -473,15 +481,15 @@ Project currently uses Portuguese for weather descriptions and UI text. Need to 
 - Faster development
 - Better performance
 - Easier maintenance
+- Wider potential audience
 
 **Negatives:**
-- Limited to Portuguese-speaking users
 - Would need refactoring for multi-language support
-- Smaller potential user base
+- Not optimized for Portuguese-speaking users
 
 **Future consideration:**
 - Add i18n library (react-i18next) if multi-language support needed
-- Structure translation files for English, Spanish, etc.
+- Structure translation files for Portuguese, Spanish, etc.
 - Consider language detection based on browser settings
 
 ---

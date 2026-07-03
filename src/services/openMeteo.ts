@@ -1,4 +1,4 @@
-import type { GeocodingResult, WeatherData, CombinedWeatherData } from '../types/weather';
+import type { GeocodingResult, WeatherData, CombinedWeatherData } from './weather';
 
 const GEOCODING_API = 'https://geocoding-api.open-meteo.com/v1/search';
 const FORECAST_API = 'https://api.open-meteo.com/v1/forecast';
@@ -6,7 +6,7 @@ const FORECAST_API = 'https://api.open-meteo.com/v1/forecast';
 export async function searchCity(cityName: string): Promise<GeocodingResult | null> {
   try {
     const response = await fetch(
-      `${GEOCODING_API}?name=${encodeURIComponent(cityName)}&count=1&language=pt`
+      `${GEOCODING_API}?name=${encodeURIComponent(cityName)}&count=1`
     );
 
     if (!response.ok) {
@@ -29,20 +29,22 @@ export async function searchCity(cityName: string): Promise<GeocodingResult | nu
       timezone: result.timezone,
     };
   } catch (error) {
-    console.error('Error searching city:', error);
     return null;
   }
 }
 
 export async function getWeather(
   lat: number,
-  lon: number,
-  tz: string
+  lon: number
 ): Promise<WeatherData | null> {
   try {
-    const response = await fetch(
-      `${FORECAST_API}?latitude=${lat}&longitude=${lon}&timezone=${encodeURIComponent(tz)}&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,wind_speed_10m,wind_direction_10m,is_day,weather_code`
-    );
+    const url = `${FORECAST_API}?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,wind_speed_10m,wind_direction_10m,is_day,weather_code`;
+
+    const response = await fetch(url, {
+      headers: {
+        'Accept': 'application/json',
+      },
+    });
 
     if (!response.ok) {
       return null;
@@ -55,7 +57,6 @@ export async function getWeather(
       current_units: data.current_units,
     };
   } catch (error) {
-    console.error('Error getting weather:', error);
     return null;
   }
 }
@@ -64,7 +65,7 @@ export async function searchWeather(cityName: string): Promise<CombinedWeatherDa
   const city = await searchCity(cityName);
   if (!city) return null;
 
-  const weather = await getWeather(city.latitude, city.longitude, city.timezone);
+  const weather = await getWeather(city.latitude, city.longitude);
   if (!weather) return null;
 
   return { city, weather };

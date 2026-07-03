@@ -23,12 +23,12 @@ export function SearchBar({ onSearch, loading = false }: SearchBarProps) {
         type="text"
         value={cityName}
         onChange={(e) => setCityName(e.target.value)}
-        placeholder="Digite o nome da cidade..."
+        placeholder="Enter city name..."
         className={styles.input}
         disabled={loading}
       />
       <button type="submit" className={styles.button} disabled={loading}>
-        {loading ? 'Buscando...' : 'Buscar'}
+        {loading ? 'Searching...' : 'Search'}
       </button>
     </form>
   );

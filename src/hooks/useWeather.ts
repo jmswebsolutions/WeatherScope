@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { CombinedWeatherData } from '../types/weather';
+import type { CombinedWeatherData } from '../services/weather';
 import { searchWeather } from '../services/openMeteo';
 
 export function useWeather() {

@@ -1,4 +1,4 @@
-import type { CombinedWeatherData } from '../../types/weather';
+import type { CombinedWeatherData } from '../../services/weather';
 import { getWeatherDescription } from '../../utils/weatherCode';
 import { getWindDirection } from '../../utils/windDirection';
 import styles from './WeatherCard.module.css';
@@ -30,28 +30,28 @@ export function WeatherCard({ data }: WeatherCardProps) {
 
       <div className={styles.metrics}>
         <div className={styles.metric}>
-          <span className={styles.metricLabel}>Sensação</span>
+          <span className={styles.metricLabel}>Feels like</span>
           <span className={styles.metricValue}>
             {Math.round(current.apparent_temperature)}°{current_units.temperature_2m.replace('°C', '')}
           </span>
         </div>
 
         <div className={styles.metric}>
-          <span className={styles.metricLabel}>Umidade</span>
+          <span className={styles.metricLabel}>Humidity</span>
           <span className={styles.metricValue}>
             {current.relative_humidity_2m}{current_units.relative_humidity_2m}
           </span>
         </div>
 
         <div className={styles.metric}>
-          <span className={styles.metricLabel}>Vento</span>
+          <span className={styles.metricLabel}>Wind</span>
           <span className={styles.metricValue}>
             {current.wind_speed_10m} {current_units.wind_speed_10m} {windDirection}
           </span>
         </div>
 
         <div className={styles.metric}>
-          <span className={styles.metricLabel}>Precipitação</span>
+          <span className={styles.metricLabel}>Precipitation</span>
           <span className={styles.metricValue}>
             {current.precipitation} {current_units.precipitation}
           </span>
