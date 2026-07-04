@@ -4,12 +4,12 @@ import { useWeather } from './hooks/useWeather';
 import './App.css';
 
 function App() {
-  const { weatherData, loading, search } = useWeather();
+  const { weatherData, loading, search, searchByLocation } = useWeather();
 
   return (
     <div className="app">
       <h1 className="title">WeatherScope</h1>
-      <SearchBar onSearch={search} loading={loading} />
+      <SearchBar onSearch={search} onLocationSearch={searchByLocation} loading={loading} />
       {weatherData && <WeatherCard data={weatherData} />}
     </div>
   );

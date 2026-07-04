@@ -45,3 +45,23 @@
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+.locationButton {
+  padding: 12px 16px;
+  background-color: #aa3bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.locationButton:hover:not(:disabled) {
+  background-color: #9933ff;
+}
+
+.locationButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

@@ -115,10 +115,10 @@ For detailed architecture documentation, see [docs/ARCHITECTURE.md](docs/ARCHITE
 - [x] CSS Modules styling
 - [x] GitHub Actions CI/CD
 - [x] GitHub Pages deployment
+- [x] Geolocation support
 - [ ] 7-day weather forecast
 - [ ] Hourly forecast
 - [ ] Weather maps
-- [ ] Geolocation support
 - [ ] Dark mode
 - [ ] Favorite cities
 - [ ] PWA features

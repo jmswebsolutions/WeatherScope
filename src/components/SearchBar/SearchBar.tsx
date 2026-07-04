@@ -4,10 +4,11 @@ import styles from './SearchBar.module.css';
 
 interface SearchBarProps {
   onSearch: (cityName: string) => void;
+  onLocationSearch: () => void;
   loading?: boolean;
 }
 
-export function SearchBar({ onSearch, loading = false }: SearchBarProps) {
+export function SearchBar({ onSearch, onLocationSearch, loading = false }: SearchBarProps) {
   const [cityName, setCityName] = useState('');
 
   const handleSubmit = (e: FormEvent) => {
@@ -29,6 +30,15 @@ export function SearchBar({ onSearch, loading = false }: SearchBarProps) {
       />
       <button type="submit" className={styles.button} disabled={loading}>
         {loading ? 'Searching...' : 'Search'}
+      </button>
+      <button
+        type="button"
+        className={styles.locationButton}
+        onClick={onLocationSearch}
+        disabled={loading}
+        title="Use my current location"
+      >
+        📍
       </button>
     </form>
   );

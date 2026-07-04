@@ -70,3 +70,22 @@ export async function searchWeather(cityName: string): Promise<CombinedWeatherDa
 
   return { city, weather };
 }
+
+export async function searchWeatherByCoordinates(
+  lat: number,
+  lon: number
+): Promise<CombinedWeatherData | null> {
+  const weather = await getWeather(lat, lon);
+  if (!weather) return null;
+
+  // Create a minimal city object for coordinates
+  const city: GeocodingResult = {
+    name: 'Current Location',
+    latitude: lat,
+    longitude: lon,
+    country_code: '',
+    timezone: 'UTC',
+  };
+
+  return { city, weather };
+}
