@@ -116,7 +116,7 @@ For detailed architecture documentation, see [docs/ARCHITECTURE.md](docs/ARCHITE
 - [x] GitHub Actions CI/CD
 - [x] GitHub Pages deployment
 - [x] Geolocation support
-- [ ] 7-day weather forecast
+- [x] 7-day weather forecast
 - [ ] Hourly forecast
 - [ ] Weather maps
 - [ ] Dark mode

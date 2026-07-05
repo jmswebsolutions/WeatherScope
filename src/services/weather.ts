@@ -20,6 +20,15 @@ export interface WeatherData {
   current_units: {
     [key: string]: string;
   };
+  daily?: {
+    time: string[];
+    temperature_2m_max: number[];
+    temperature_2m_min: number[];
+    weather_code: number[];
+  };
+  daily_units?: {
+    [key: string]: string;
+  };
 }
 
 export interface CombinedWeatherData {

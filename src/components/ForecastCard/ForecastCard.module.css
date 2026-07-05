@@ -1,0 +1,65 @@
+.forecastCard {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 24px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+}
+
+.forecastList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.forecastItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.forecastItem:hover {
+  background: #e8e8e8;
+}
+
+.day {
+  font-weight: 600;
+  color: #1a1a1a;
+  min-width: 60px;
+}
+
+.description {
+  flex: 1;
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}
+
+.temperatures {
+  display: flex;
+  gap: 8px;
+  min-width: 80px;
+  justify-content: flex-end;
+}
+
+.maxTemp {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.minTemp {
+  color: #666;
+}
