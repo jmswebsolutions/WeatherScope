@@ -1,8 +1,8 @@
 .weatherCard {
-  background: white;
+  background: var(--card-bg);
   border-radius: 16px;
   padding: 32px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
   max-width: 500px;
   width: 100%;
   margin: 0 auto;
@@ -17,12 +17,12 @@
   font-size: 32px;
   font-weight: 700;
   margin: 0 0 8px 0;
-  color: #08060d;
+  color: var(--text-color);
 }
 
 .country {
   font-size: 16px;
-  color: #6b6375;
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -34,13 +34,13 @@
 .temperature {
   font-size: 72px;
   font-weight: 700;
-  color: #08060d;
+  color: var(--text-color);
   margin: 0;
 }
 
 .condition {
   font-size: 20px;
-  color: #6b6375;
+  color: var(--text-secondary);
   margin: 8px 0 0 0;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .metric {
-  background: #f4f3ec;
+  background: var(--metric-bg);
   padding: 16px;
   border-radius: 8px;
   text-align: center;
@@ -60,7 +60,7 @@
 .metricLabel {
   display: block;
   font-size: 14px;
-  color: #6b6375;
+  color: var(--text-secondary);
   margin-bottom: 4px;
 }
 
@@ -68,5 +68,39 @@
   display: block;
   font-size: 18px;
   font-weight: 600;
-  color: #08060d;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .weatherCard {
+    padding: 24px 16px;
+  }
+
+  .cityName {
+    font-size: 24px;
+  }
+
+  .temperature {
+    font-size: 48px;
+  }
+
+  .condition {
+    font-size: 16px;
+  }
+
+  .metrics {
+    gap: 12px;
+  }
+
+  .metric {
+    padding: 12px;
+  }
+
+  .metricLabel {
+    font-size: 12px;
+  }
+
+  .metricValue {
+    font-size: 16px;
+  }
 }

@@ -9,11 +9,13 @@
 .input {
   flex: 1;
   padding: 12px 16px;
-  border: 2px solid #e5e4e7;
+  border: 2px solid var(--input-border);
   border-radius: 8px;
   font-size: 16px;
   outline: none;
   transition: border-color 0.2s;
+  background-color: var(--input-bg);
+  color: var(--input-text);
 }
 
 .input:focus {
@@ -21,7 +23,7 @@
 }
 
 .input:disabled {
-  background-color: #f5f5f5;
+  background-color: var(--input-bg);
   cursor: not-allowed;
 }
 
@@ -64,4 +66,25 @@
 .locationButton:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .searchBar {
+    max-width: 100%;
+  }
+
+  .input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .locationButton {
+    padding: 10px 12px;
+    font-size: 18px;
+  }
 }

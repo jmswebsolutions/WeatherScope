@@ -7,10 +7,57 @@
   gap: 32px;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 500px;
+  justify-content: space-between;
+}
+
 .title {
   font-size: 48px;
   font-weight: 700;
-  color: #08060d;
+  color: var(--text-color);
   margin: 0;
   text-align: center;
+  transition: color 0.3s;
+}
+
+.themeToggle {
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.themeToggle:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark .themeToggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 20px 16px;
+    gap: 24px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .header {
+    max-width: 100%;
+  }
+
+  .themeToggle {
+    font-size: 28px;
+  }
 }

@@ -117,9 +117,9 @@ For detailed architecture documentation, see [docs/ARCHITECTURE.md](docs/ARCHITE
 - [x] GitHub Pages deployment
 - [x] Geolocation support
 - [x] 7-day weather forecast
+- [x] Dark mode
 - [ ] Hourly forecast
 - [ ] Weather maps
-- [ ] Dark mode
 - [ ] Favorite cities
 - [ ] PWA features
 - [ ] Multi-language support

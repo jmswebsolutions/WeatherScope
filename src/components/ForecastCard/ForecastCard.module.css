@@ -1,8 +1,8 @@
 .forecastCard {
-  background: white;
+  background: var(--card-bg);
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
   margin-top: 24px;
   max-width: 500px;
   width: 100%;
@@ -12,7 +12,7 @@
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 16px;
-  color: #1a1a1a;
+  color: var(--text-color);
 }
 
 .forecastList {
@@ -26,24 +26,24 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px;
-  background: #f5f5f5;
+  background: var(--forecast-item-bg);
   border-radius: 8px;
   transition: background-color 0.2s;
 }
 
 .forecastItem:hover {
-  background: #e8e8e8;
+  background: var(--forecast-item-hover);
 }
 
 .day {
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-color);
   min-width: 60px;
 }
 
 .description {
   flex: 1;
-  color: #666;
+  color: var(--text-tertiary);
   font-size: 14px;
   text-align: center;
 }
@@ -57,9 +57,44 @@
 
 .maxTemp {
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-color);
 }
 
 .minTemp {
-  color: #666;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 768px) {
+  .forecastCard {
+    padding: 20px 16px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .forecastItem {
+    padding: 10px;
+  }
+
+  .day {
+    font-size: 14px;
+    min-width: 50px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .temperatures {
+    min-width: 70px;
+  }
+
+  .maxTemp {
+    font-size: 14px;
+  }
+
+  .minTemp {
+    font-size: 14px;
+  }
 }
