@@ -29,6 +29,14 @@ export interface WeatherData {
   daily_units?: {
     [key: string]: string;
   };
+  hourly?: {
+    time: string[];
+    temperature_2m: number[];
+    weather_code: number[];
+  };
+  hourly_units?: {
+    [key: string]: string;
+  };
 }
 
 export interface CombinedWeatherData {

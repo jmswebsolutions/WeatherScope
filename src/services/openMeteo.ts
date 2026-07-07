@@ -38,7 +38,7 @@ export async function getWeather(
   lon: number
 ): Promise<WeatherData | null> {
   try {
-    const url = `${FORECAST_API}?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,wind_speed_10m,wind_direction_10m,is_day,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code`;
+    const url = `${FORECAST_API}?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,wind_speed_10m,wind_direction_10m,is_day,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code&hourly=temperature_2m,weather_code`;
 
     const response = await fetch(url, {
       headers: {
@@ -57,6 +57,8 @@ export async function getWeather(
       current_units: data.current_units,
       daily: data.daily,
       daily_units: data.daily_units,
+      hourly: data.hourly,
+      hourly_units: data.hourly_units,
     };
   } catch (error) {
     return null;

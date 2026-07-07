@@ -1,6 +1,7 @@
 import { SearchBar } from './components/SearchBar/SearchBar';
 import { WeatherCard } from './components/WeatherCard/WeatherCard';
 import { ForecastCard } from './components/ForecastCard/ForecastCard';
+import { HourlyForecast } from './components/HourlyForecast/HourlyForecast';
 import { useWeather } from './hooks/useWeather';
 import { useTheme } from './contexts/ThemeContext';
 import './App.css';
@@ -19,6 +20,7 @@ function App() {
       </div>
       <SearchBar onSearch={search} onLocationSearch={searchByLocation} loading={loading} />
       {weatherData && <WeatherCard data={weatherData} />}
+      {weatherData && <HourlyForecast data={weatherData} />}
       {weatherData && <ForecastCard data={weatherData} />}
     </div>
   );

@@ -1,0 +1,105 @@
+.hourlyForecast {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  margin-top: 24px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-color);
+}
+
+.hourlyList {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-tertiary) transparent;
+}
+
+.hourlyList::-webkit-scrollbar {
+  height: 6px;
+}
+
+.hourlyList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hourlyList::-webkit-scrollbar-thumb {
+  background-color: var(--text-tertiary);
+  border-radius: 3px;
+}
+
+.hourlyItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+  padding: 12px 8px;
+  background: var(--forecast-item-bg);
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.hourlyItem:hover {
+  background: var(--forecast-item-hover);
+}
+
+.time {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.icon {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  text-align: center;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.temperature {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .hourlyForecast {
+    padding: 20px 16px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .hourlyList {
+    gap: 12px;
+  }
+
+  .hourlyItem {
+    min-width: 60px;
+    padding: 10px 6px;
+  }
+
+  .time {
+    font-size: 12px;
+  }
+
+  .icon {
+    font-size: 10px;
+  }
+
+  .temperature {
+    font-size: 16px;
+  }
+}

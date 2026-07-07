@@ -118,7 +118,7 @@ For detailed architecture documentation, see [docs/ARCHITECTURE.md](docs/ARCHITE
 - [x] Geolocation support
 - [x] 7-day weather forecast
 - [x] Dark mode
-- [ ] Hourly forecast
+- [x] Hourly forecast
 - [ ] Weather maps
 - [ ] Favorite cities
 - [ ] PWA features
