@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .input {
@@ -16,6 +17,7 @@
   transition: border-color 0.2s;
   background-color: var(--input-bg);
   color: var(--input-text);
+  min-width: 0;
 }
 
 .input:focus {
@@ -37,6 +39,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s;
+  white-space: nowrap;
 }
 
 .button:hover:not(:disabled) {
@@ -57,6 +60,7 @@
   font-size: 20px;
   cursor: pointer;
   transition: background-color 0.2s;
+  flex-shrink: 0;
 }
 
 .locationButton:hover:not(:disabled) {
@@ -71,6 +75,7 @@
 @media (max-width: 768px) {
   .searchBar {
     max-width: 100%;
+    gap: 8px;
   }
 
   .input {
@@ -86,5 +91,27 @@
   .locationButton {
     padding: 10px 12px;
     font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchBar {
+    flex-wrap: nowrap;
+  }
+
+  .input {
+    font-size: 14px;
+    padding: 10px 12px;
+    flex: 1;
+  }
+
+  .button {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .locationButton {
+    padding: 10px 10px;
+    font-size: 16px;
   }
 }

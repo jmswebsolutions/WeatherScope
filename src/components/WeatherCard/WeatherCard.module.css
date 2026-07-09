@@ -6,6 +6,7 @@
   max-width: 500px;
   width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .header {
@@ -102,5 +103,43 @@
 
   .metricValue {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .weatherCard {
+    padding: 20px 12px;
+  }
+
+  .cityName {
+    font-size: 20px;
+  }
+
+  .country {
+    font-size: 14px;
+  }
+
+  .temperature {
+    font-size: 40px;
+  }
+
+  .condition {
+    font-size: 14px;
+  }
+
+  .metrics {
+    gap: 10px;
+  }
+
+  .metric {
+    padding: 10px;
+  }
+
+  .metricLabel {
+    font-size: 11px;
+  }
+
+  .metricValue {
+    font-size: 14px;
   }
 }

@@ -6,6 +6,7 @@
   margin-top: 24px;
   max-width: 500px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .title {
@@ -96,5 +97,42 @@
 
   .minTemp {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .forecastCard {
+    padding: 16px 12px;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .forecastItem {
+    padding: 8px;
+  }
+
+  .day {
+    font-size: 13px;
+    min-width: 45px;
+  }
+
+  .description {
+    font-size: 11px;
+  }
+
+  .temperatures {
+    min-width: 60px;
+    gap: 6px;
+  }
+
+  .maxTemp {
+    font-size: 13px;
+  }
+
+  .minTemp {
+    font-size: 13px;
   }
 }

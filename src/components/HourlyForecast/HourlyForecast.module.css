@@ -6,6 +6,7 @@
   margin-top: 24px;
   max-width: 500px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .title {
@@ -101,5 +102,37 @@
 
   .temperature {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hourlyForecast {
+    padding: 16px 12px;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .hourlyList {
+    gap: 10px;
+  }
+
+  .hourlyItem {
+    min-width: 50px;
+    padding: 8px 4px;
+  }
+
+  .time {
+    font-size: 11px;
+  }
+
+  .icon {
+    font-size: 9px;
+  }
+
+  .temperature {
+    font-size: 14px;
   }
 }

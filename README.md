@@ -119,7 +119,7 @@ For detailed architecture documentation, see [docs/ARCHITECTURE.md](docs/ARCHITE
 - [x] 7-day weather forecast
 - [x] Dark mode
 - [x] Hourly forecast
-- [ ] Weather maps
+- [x] Weather maps
 - [ ] Favorite cities
 - [ ] PWA features
 - [ ] Multi-language support
