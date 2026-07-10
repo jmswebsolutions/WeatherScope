@@ -10,7 +10,9 @@
 }
 
 .header {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 24px;
 }
 
@@ -25,6 +27,24 @@
   font-size: 16px;
   color: var(--text-secondary);
   margin: 0;
+}
+
+.favoriteButton {
+  background: transparent;
+  border: 2px solid var(--input-border);
+  border-radius: 8px;
+  font-size: 24px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.favoriteButton:hover {
+  background: rgba(170, 59, 255, 0.1);
+  border-color: #aa3bff;
+  color: #aa3bff;
 }
 
 .mainInfo {
@@ -75,6 +95,16 @@
 @media (max-width: 768px) {
   .weatherCard {
     padding: 24px 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .favoriteButton {
+    align-self: flex-end;
   }
 
   .cityName {

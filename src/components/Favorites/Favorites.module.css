@@ -1,0 +1,123 @@
+.container {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  margin-top: 24px;
+  max-width: 500px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-color);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--forecast-item-bg);
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.item:hover {
+  background: var(--forecast-item-hover);
+}
+
+.cityInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cityName {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.country {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+}
+
+.removeButton {
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 16px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.removeButton:hover {
+  background: rgba(255, 0, 0, 0.1);
+  border-color: rgba(255, 0, 0, 0.3);
+  color: #ff4444;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .item {
+    padding: 10px 12px;
+  }
+
+  .cityName {
+    font-size: 14px;
+  }
+
+  .country {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px 12px;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .item {
+    padding: 8px 10px;
+  }
+
+  .cityName {
+    font-size: 13px;
+  }
+
+  .country {
+    font-size: 11px;
+  }
+
+  .removeButton {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+}

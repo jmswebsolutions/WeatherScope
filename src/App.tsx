@@ -3,11 +3,13 @@ import { WeatherCard } from './components/WeatherCard/WeatherCard';
 import { ForecastCard } from './components/ForecastCard/ForecastCard';
 import { HourlyForecast } from './components/HourlyForecast/HourlyForecast';
 import { WeatherMap } from './components/WeatherMap/WeatherMap';
+import { Favorites } from './components/Favorites/Favorites';
 import { useWeather } from './hooks/useWeather';
 import { useTheme } from './contexts/ThemeContext';
+import { FavoritesProvider } from './contexts/FavoritesContext';
 import './App.css';
 
-function App() {
+function AppContent() {
   const { weatherData, loading, search, searchByLocation } = useWeather();
   const { isDark, toggleTheme } = useTheme();
 
@@ -20,6 +22,7 @@ function App() {
         </button>
       </div>
       <SearchBar onSearch={search} onLocationSearch={searchByLocation} loading={loading} />
+      <Favorites />
       {weatherData && <WeatherCard data={weatherData} />}
       {weatherData && <HourlyForecast data={weatherData} />}
       {weatherData && <ForecastCard data={weatherData} />}
@@ -31,6 +34,14 @@ function App() {
         />
       )}
     </div>
+  );
+}
+
+function App() {
+  return (
+    <FavoritesProvider>
+      <AppContent />
+    </FavoritesProvider>
   );
 }
 

@@ -120,7 +120,7 @@ For detailed architecture documentation, see [docs/ARCHITECTURE.md](docs/ARCHITE
 - [x] Dark mode
 - [x] Hourly forecast
 - [x] Weather maps
-- [ ] Favorite cities
+- [x] Favorite cities
 - [ ] PWA features
 - [ ] Multi-language support
 - [ ] Weather alerts
