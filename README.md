@@ -121,7 +121,7 @@ For detailed architecture documentation, see [docs/ARCHITECTURE.md](docs/ARCHITE
 - [x] Hourly forecast
 - [x] Weather maps
 - [x] Favorite cities
-- [ ] PWA features
+- [x] PWA features
 - [ ] Multi-language support
 - [ ] Weather alerts
 - [ ] Accessibility improvements
