@@ -18,6 +18,12 @@
   justify-content: space-between;
 }
 
+.headerControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .title {
   font-size: 48px;
   font-weight: 700;

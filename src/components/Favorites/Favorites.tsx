@@ -1,8 +1,10 @@
 import { useFavorites } from '../../contexts/FavoritesContext';
+import { useTranslation } from 'react-i18next';
 import styles from './Favorites.module.css';
 
 export function Favorites() {
   const { favorites, removeFavorite } = useFavorites();
+  const { t } = useTranslation();
 
   if (favorites.length === 0) {
     return null;
@@ -10,7 +12,7 @@ export function Favorites() {
 
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>Favorite Cities</h3>
+      <h3 className={styles.title}>{t('favorites.title')}</h3>
       <div className={styles.list}>
         {favorites.map((city) => (
           <div key={city.id} className={styles.item}>
@@ -21,8 +23,8 @@ export function Favorites() {
             <button
               className={styles.removeButton}
               onClick={() => removeFavorite(city.id)}
-              title="Remove from favorites"
-              aria-label={`Remove ${city.name} from favorites`}
+              title={t('favorites.remove')}
+              aria-label={`${t('favorites.remove')} ${city.name}`}
             >
               ✕
             </button>

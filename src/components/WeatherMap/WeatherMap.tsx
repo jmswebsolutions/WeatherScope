@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
+import { useTranslation } from 'react-i18next';
 import 'leaflet/dist/leaflet.css';
 import styles from './WeatherMap.module.css';
 
@@ -30,18 +31,19 @@ function MapView({ lat, lon }: { lat: number; lon: number }) {
 
 export function WeatherMap({ lat, lon, cityName }: WeatherMapProps) {
   const [isClient, setIsClient] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
   if (!isClient) {
-    return <div className={styles.loading}>Loading map...</div>;
+    return <div className={styles.loading}>{t('weatherMap.loading')}</div>;
   }
 
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>Weather Map</h3>
+      <h3 className={styles.title}>{t('weatherMap.title')}</h3>
       <MapContainer
         center={[lat, lon]}
         zoom={10}

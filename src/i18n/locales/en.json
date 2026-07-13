@@ -1,0 +1,48 @@
+{
+  "app": {
+    "title": "WeatherScope"
+  },
+  "searchBar": {
+    "placeholder": "Search for a city...",
+    "searchButton": "Search",
+    "locationButton": "Use my location"
+  },
+  "weatherCard": {
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "precipitation": "Precipitation",
+    "addToFavorites": "Add to favorites",
+    "removeFromFavorites": "Remove from favorites"
+  },
+  "hourlyForecast": {
+    "title": "Hourly Forecast"
+  },
+  "forecastCard": {
+    "title": "7-Day Forecast"
+  },
+  "weatherMap": {
+    "title": "Weather Map",
+    "loading": "Loading map..."
+  },
+  "favorites": {
+    "title": "Favorite Cities",
+    "empty": "No favorite cities yet",
+    "remove": "Remove"
+  },
+  "theme": {
+    "toggle": "Toggle dark mode",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "title": "Language",
+    "en": "English",
+    "pt-BR": "Português"
+  },
+  "errors": {
+    "cityNotFound": "City not found. Please try again.",
+    "locationError": "Unable to get your location. Please enable location services.",
+    "genericError": "An error occurred. Please try again."
+  }
+}

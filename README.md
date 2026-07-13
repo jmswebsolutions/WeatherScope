@@ -122,7 +122,7 @@ For detailed architecture documentation, see [docs/ARCHITECTURE.md](docs/ARCHITE
 - [x] Weather maps
 - [x] Favorite cities
 - [x] PWA features
-- [ ] Multi-language support
+- [x] Multi-language support
 - [ ] Weather alerts
 - [ ] Accessibility improvements
 

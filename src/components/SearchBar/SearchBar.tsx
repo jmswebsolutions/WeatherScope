@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './SearchBar.module.css';
 
 interface SearchBarProps {
@@ -10,6 +11,7 @@ interface SearchBarProps {
 
 export function SearchBar({ onSearch, onLocationSearch, loading = false }: SearchBarProps) {
   const [cityName, setCityName] = useState('');
+  const { t } = useTranslation();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -24,19 +26,19 @@ export function SearchBar({ onSearch, onLocationSearch, loading = false }: Searc
         type="text"
         value={cityName}
         onChange={(e) => setCityName(e.target.value)}
-        placeholder="Enter city name..."
+        placeholder={t('searchBar.placeholder')}
         className={styles.input}
         disabled={loading}
       />
       <button type="submit" className={styles.button} disabled={loading}>
-        {loading ? 'Searching...' : 'Search'}
+        {loading ? t('searchBar.searchButton') : t('searchBar.searchButton')}
       </button>
       <button
         type="button"
         className={styles.locationButton}
         onClick={onLocationSearch}
         disabled={loading}
-        title="Use my current location"
+        title={t('searchBar.locationButton')}
       >
         📍
       </button>

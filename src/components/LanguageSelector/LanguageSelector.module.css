@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  padding: 8px 12px;
+  border: 2px solid var(--input-border);
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.select:focus {
+  border-color: #aa3bff;
+}
+
+@media (max-width: 768px) {
+  .select {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .select {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}

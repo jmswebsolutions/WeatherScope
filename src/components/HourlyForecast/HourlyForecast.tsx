@@ -1,5 +1,6 @@
 import type { CombinedWeatherData } from '../../services/weather';
 import { getWeatherDescription } from '../../utils/weatherCode';
+import { useTranslation } from 'react-i18next';
 import styles from './HourlyForecast.module.css';
 
 interface HourlyForecastProps {
@@ -8,6 +9,7 @@ interface HourlyForecastProps {
 
 export function HourlyForecast({ data }: HourlyForecastProps) {
   const { weather } = data;
+  const { t, i18n } = useTranslation();
 
   if (!weather.hourly || !weather.hourly.time) {
     return null;
@@ -29,12 +31,12 @@ export function HourlyForecast({ data }: HourlyForecastProps) {
     }));
 
   const formatTime = (date: Date): string => {
-    return date.toLocaleTimeString('en-US', { hour: 'numeric', hour12: true });
+    return date.toLocaleTimeString(i18n.language, { hour: 'numeric', hour12: true });
   };
 
   return (
     <div className={styles.hourlyForecast}>
-      <h3 className={styles.title}>24-Hour Forecast</h3>
+      <h3 className={styles.title}>{t('hourlyForecast.title')}</h3>
       <div className={styles.hourlyList}>
         {hourlyData.map((hour, index) => (
           <div key={index} className={styles.hourlyItem}>

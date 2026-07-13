@@ -1,5 +1,6 @@
 import type { CombinedWeatherData } from '../../services/weather';
 import { getWeatherDescription } from '../../utils/weatherCode';
+import { useTranslation } from 'react-i18next';
 import styles from './ForecastCard.module.css';
 
 interface ForecastCardProps {
@@ -8,6 +9,7 @@ interface ForecastCardProps {
 
 export function ForecastCard({ data }: ForecastCardProps) {
   const { weather } = data;
+  const { t, i18n } = useTranslation();
 
   if (!weather.daily || !weather.daily.time) {
     return null;
@@ -22,12 +24,12 @@ export function ForecastCard({ data }: ForecastCardProps) {
   }));
 
   const getDayName = (date: Date): string => {
-    return date.toLocaleDateString('en-US', { weekday: 'short' });
+    return date.toLocaleDateString(i18n.language, { weekday: 'short' });
   };
 
   return (
     <div className={styles.forecastCard}>
-      <h3 className={styles.title}>7-Day Forecast</h3>
+      <h3 className={styles.title}>{t('forecastCard.title')}</h3>
       <div className={styles.forecastList}>
         {forecastDays.map((day, index) => (
           <div key={index} className={styles.forecastItem}>
