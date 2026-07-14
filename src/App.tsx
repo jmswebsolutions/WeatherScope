@@ -4,6 +4,7 @@ import { ForecastCard } from './components/ForecastCard/ForecastCard';
 import { HourlyForecast } from './components/HourlyForecast/HourlyForecast';
 import { WeatherMap } from './components/WeatherMap/WeatherMap';
 import { Favorites } from './components/Favorites/Favorites';
+import { WeatherAlerts } from './components/WeatherAlerts/WeatherAlerts';
 import { LanguageSelector } from './components/LanguageSelector/LanguageSelector';
 import { useWeather } from './hooks/useWeather';
 import { useTheme } from './contexts/ThemeContext';
@@ -30,6 +31,7 @@ function AppContent() {
       <SearchBar onSearch={search} onLocationSearch={searchByLocation} loading={loading} />
       <Favorites />
       {weatherData && <WeatherCard data={weatherData} />}
+      {weatherData && <WeatherAlerts weather={weatherData.weather} />}
       {weatherData && <HourlyForecast data={weatherData} />}
       {weatherData && <ForecastCard data={weatherData} />}
       {weatherData && (

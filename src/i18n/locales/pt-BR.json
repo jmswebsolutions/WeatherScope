@@ -30,6 +30,9 @@
     "empty": "Nenhuma cidade favorita ainda",
     "remove": "Remover"
   },
+  "weatherAlerts": {
+    "title": "Alertas do Tempo"
+  },
   "theme": {
     "toggle": "Alternar modo escuro",
     "light": "Claro",

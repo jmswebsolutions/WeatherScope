@@ -30,6 +30,9 @@
     "empty": "No favorite cities yet",
     "remove": "Remove"
   },
+  "weatherAlerts": {
+    "title": "Weather Alerts"
+  },
   "theme": {
     "toggle": "Toggle dark mode",
     "light": "Light",
