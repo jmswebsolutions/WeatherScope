@@ -124,7 +124,7 @@ For detailed architecture documentation, see [docs/ARCHITECTURE.md](docs/ARCHITE
 - [x] PWA features
 - [x] Multi-language support
 - [x] Weather alerts
-- [ ] Accessibility improvements
+- [x] Accessibility improvements
 
 ## Contributing
 

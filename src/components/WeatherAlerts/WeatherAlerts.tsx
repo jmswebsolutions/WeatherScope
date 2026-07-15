@@ -50,8 +50,8 @@ export function WeatherAlerts({ weather }: WeatherAlertsProps) {
       <h3 className={styles.title}>{t('weatherAlerts.title')}</h3>
       <div className={styles.alertsList}>
         {alerts.map((alert, index) => (
-          <div key={index} className={`${styles.alert} ${getSeverityClass(alert.severity)}`}>
-            <span className={styles.icon}>{getAlertIcon(alert.type)}</span>
+          <div key={index} className={`${styles.alert} ${getSeverityClass(alert.severity)}`} role="alert">
+            <span className={styles.icon} aria-hidden="true">{getAlertIcon(alert.type)}</span>
             <span className={styles.message}>{alert.message}</span>
           </div>
         ))}

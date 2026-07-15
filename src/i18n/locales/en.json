@@ -43,6 +43,9 @@
     "en": "English",
     "pt-BR": "Português"
   },
+  "accessibility": {
+    "skipToContent": "Skip to main content"
+  },
   "errors": {
     "cityNotFound": "City not found. Please try again.",
     "locationError": "Unable to get your location. Please enable location services.",

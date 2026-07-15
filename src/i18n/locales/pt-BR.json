@@ -43,6 +43,9 @@
     "en": "Inglês",
     "pt-BR": "Português"
   },
+  "accessibility": {
+    "skipToContent": "Pular para o conteúdo principal"
+  },
   "errors": {
     "cityNotFound": "Cidade não encontrada. Tente novamente.",
     "locationError": "Não foi possível obter sua localização. Ative os serviços de localização.",

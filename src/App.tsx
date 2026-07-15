@@ -19,28 +19,33 @@ function AppContent() {
 
   return (
     <div className="app">
-      <div className="header">
+      <a href="#main-content" className="skip-link">
+        {t('accessibility.skipToContent')}
+      </a>
+      <header className="header">
         <h1 className="title">{t('app.title')}</h1>
         <div className="headerControls">
           <LanguageSelector />
-          <button className="themeToggle" onClick={toggleTheme} title={t('theme.toggle')}>
-            {isDark ? '☀️' : '🌙'}
+          <button className="themeToggle" onClick={toggleTheme} title={t('theme.toggle')} aria-label={t('theme.toggle')}>
+            <span aria-hidden="true">{isDark ? '☀️' : '🌙'}</span>
           </button>
         </div>
-      </div>
-      <SearchBar onSearch={search} onLocationSearch={searchByLocation} loading={loading} />
-      <Favorites />
-      {weatherData && <WeatherCard data={weatherData} />}
-      {weatherData && <WeatherAlerts weather={weatherData.weather} />}
-      {weatherData && <HourlyForecast data={weatherData} />}
-      {weatherData && <ForecastCard data={weatherData} />}
-      {weatherData && (
-        <WeatherMap
-          lat={weatherData.city.latitude}
-          lon={weatherData.city.longitude}
-          cityName={weatherData.city.name}
-        />
-      )}
+      </header>
+      <main id="main-content" className="main-content">
+        <SearchBar onSearch={search} onLocationSearch={searchByLocation} loading={loading} />
+        <Favorites />
+        {weatherData && <WeatherCard data={weatherData} />}
+        {weatherData && <WeatherAlerts weather={weatherData.weather} />}
+        {weatherData && <HourlyForecast data={weatherData} />}
+        {weatherData && <ForecastCard data={weatherData} />}
+        {weatherData && (
+          <WeatherMap
+            lat={weatherData.city.latitude}
+            lon={weatherData.city.longitude}
+            cityName={weatherData.city.name}
+          />
+        )}
+      </main>
     </div>
   );
 }

@@ -1,32 +1,32 @@
 .container {
   background: var(--card-bg);
   border-radius: 16px;
-  padding: 24px;
+  padding: clamp(18px, 4vw, 24px);
   box-shadow: var(--card-shadow);
-  margin-top: 24px;
-  max-width: 500px;
+  margin-top: clamp(20px, 4vw, 32px);
+  max-width: min(90vw, 800px);
   width: 100%;
   box-sizing: border-box;
 }
 
 .title {
-  font-size: 20px;
+  font-size: clamp(16px, 4vw, 20px);
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: clamp(12px, 3vw, 16px);
   color: var(--text-color);
 }
 
 .alertsList {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: clamp(10px, 2vw, 14px);
 }
 
 .alert {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 16px;
+  gap: clamp(10px, 2vw, 14px);
+  padding: clamp(12px, 3vw, 16px);
   border-radius: 8px;
   border-left: 4px solid;
   transition: background-color 0.2s;
@@ -52,58 +52,24 @@
 }
 
 .icon {
-  font-size: 24px;
+  font-size: clamp(18px, 5vw, 24px);
   flex-shrink: 0;
 }
 
 .message {
-  font-size: 14px;
+  font-size: clamp(12px, 3vw, 14px);
   color: var(--text-color);
   line-height: 1.4;
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 20px 16px;
-  }
-
-  .title {
-    font-size: 18px;
-  }
-
-  .alert {
-    padding: 12px;
-  }
-
-  .icon {
-    font-size: 20px;
-  }
-
-  .message {
-    font-size: 13px;
+    max-width: 95vw;
   }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: 16px 12px;
-  }
-
-  .title {
-    font-size: 16px;
-    margin-bottom: 12px;
-  }
-
-  .alert {
-    padding: 10px;
-    gap: 10px;
-  }
-
-  .icon {
-    font-size: 18px;
-  }
-
-  .message {
-    font-size: 12px;
+    max-width: 98vw;
   }
 }

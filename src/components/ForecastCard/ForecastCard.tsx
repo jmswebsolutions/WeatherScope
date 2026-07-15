@@ -28,8 +28,8 @@ export function ForecastCard({ data }: ForecastCardProps) {
   };
 
   return (
-    <div className={styles.forecastCard}>
-      <h3 className={styles.title}>{t('forecastCard.title')}</h3>
+    <section className={styles.forecastCard} aria-labelledby="forecast-title">
+      <h2 id="forecast-title" className={styles.title}>{t('forecastCard.title')}</h2>
       <div className={styles.forecastList}>
         {forecastDays.map((day, index) => (
           <div key={index} className={styles.forecastItem}>
@@ -48,6 +48,6 @@ export function ForecastCard({ data }: ForecastCardProps) {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

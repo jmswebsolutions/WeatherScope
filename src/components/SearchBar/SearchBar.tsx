@@ -21,16 +21,21 @@ export function SearchBar({ onSearch, onLocationSearch, loading = false }: Searc
   };
 
   return (
-    <form className={styles.searchBar} onSubmit={handleSubmit}>
+    <form className={styles.searchBar} onSubmit={handleSubmit} role="search">
+      <label htmlFor="city-search" className={styles.visuallyHidden}>
+        {t('searchBar.placeholder')}
+      </label>
       <input
+        id="city-search"
         type="text"
         value={cityName}
         onChange={(e) => setCityName(e.target.value)}
         placeholder={t('searchBar.placeholder')}
         className={styles.input}
         disabled={loading}
+        aria-label={t('searchBar.placeholder')}
       />
-      <button type="submit" className={styles.button} disabled={loading}>
+      <button type="submit" className={styles.button} disabled={loading} aria-label={t('searchBar.searchButton')}>
         {loading ? t('searchBar.searchButton') : t('searchBar.searchButton')}
       </button>
       <button
@@ -39,8 +44,9 @@ export function SearchBar({ onSearch, onLocationSearch, loading = false }: Searc
         onClick={onLocationSearch}
         disabled={loading}
         title={t('searchBar.locationButton')}
+        aria-label={t('searchBar.locationButton')}
       >
-        📍
+        <span aria-hidden="true">📍</span>
       </button>
     </form>
   );

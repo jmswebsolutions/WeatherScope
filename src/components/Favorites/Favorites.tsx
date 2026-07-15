@@ -11,8 +11,8 @@ export function Favorites() {
   }
 
   return (
-    <div className={styles.container}>
-      <h3 className={styles.title}>{t('favorites.title')}</h3>
+    <section className={styles.container} aria-labelledby="favorites-title">
+      <h2 id="favorites-title" className={styles.title}>{t('favorites.title')}</h2>
       <div className={styles.list}>
         {favorites.map((city) => (
           <div key={city.id} className={styles.item}>
@@ -26,11 +26,11 @@ export function Favorites() {
               title={t('favorites.remove')}
               aria-label={`${t('favorites.remove')} ${city.name}`}
             >
-              ✕
+              <span aria-hidden="true">✕</span>
             </button>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -41,7 +41,7 @@ export function WeatherCard({ data }: WeatherCardProps) {
           title={favorite ? t('weatherCard.removeFromFavorites') : t('weatherCard.addToFavorites')}
           aria-label={favorite ? t('weatherCard.removeFromFavorites') : t('weatherCard.addToFavorites')}
         >
-          {favorite ? '★' : '☆'}
+          <span aria-hidden="true">{favorite ? '★' : '☆'}</span>
         </button>
       </div>
 

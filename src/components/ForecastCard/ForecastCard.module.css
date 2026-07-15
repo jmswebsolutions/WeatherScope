@@ -1,35 +1,36 @@
 .forecastCard {
   background: var(--card-bg);
   border-radius: 16px;
-  padding: 24px;
+  padding: clamp(18px, 4vw, 24px);
   box-shadow: var(--card-shadow);
-  margin-top: 24px;
-  max-width: 500px;
+  margin-top: clamp(20px, 4vw, 32px);
+  max-width: min(90vw, 800px);
   width: 100%;
   box-sizing: border-box;
 }
 
 .title {
-  font-size: 20px;
+  font-size: clamp(16px, 4vw, 20px);
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: clamp(12px, 3vw, 16px);
   color: var(--text-color);
 }
 
 .forecastList {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: clamp(8px, 2vw, 12px);
 }
 
 .forecastItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px;
+  padding: clamp(10px, 2.5vw, 14px);
   background: var(--forecast-item-bg);
   border-radius: 8px;
   transition: background-color 0.2s;
+  gap: clamp(8px, 2vw, 12px);
 }
 
 .forecastItem:hover {
@@ -39,100 +40,43 @@
 .day {
   font-weight: 600;
   color: var(--text-color);
-  min-width: 60px;
+  min-width: clamp(45px, 10vw, 60px);
+  font-size: clamp(13px, 3vw, 14px);
 }
 
 .description {
   flex: 1;
   color: var(--text-tertiary);
-  font-size: 14px;
+  font-size: clamp(11px, 3vw, 14px);
   text-align: center;
 }
 
 .temperatures {
   display: flex;
-  gap: 8px;
-  min-width: 80px;
+  gap: clamp(4px, 1vw, 8px);
+  min-width: clamp(60px, 12vw, 80px);
   justify-content: flex-end;
 }
 
 .maxTemp {
   font-weight: 600;
   color: var(--text-color);
+  font-size: clamp(13px, 3vw, 14px);
 }
 
 .minTemp {
   color: var(--text-tertiary);
+  font-size: clamp(13px, 3vw, 14px);
 }
 
 @media (max-width: 768px) {
   .forecastCard {
-    padding: 20px 16px;
-  }
-
-  .title {
-    font-size: 18px;
-  }
-
-  .forecastItem {
-    padding: 10px;
-  }
-
-  .day {
-    font-size: 14px;
-    min-width: 50px;
-  }
-
-  .description {
-    font-size: 12px;
-  }
-
-  .temperatures {
-    min-width: 70px;
-  }
-
-  .maxTemp {
-    font-size: 14px;
-  }
-
-  .minTemp {
-    font-size: 14px;
+    max-width: 95vw;
   }
 }
 
 @media (max-width: 480px) {
   .forecastCard {
-    padding: 16px 12px;
-  }
-
-  .title {
-    font-size: 16px;
-    margin-bottom: 12px;
-  }
-
-  .forecastItem {
-    padding: 8px;
-  }
-
-  .day {
-    font-size: 13px;
-    min-width: 45px;
-  }
-
-  .description {
-    font-size: 11px;
-  }
-
-  .temperatures {
-    min-width: 60px;
-    gap: 6px;
-  }
-
-  .maxTemp {
-    font-size: 13px;
-  }
-
-  .minTemp {
-    font-size: 13px;
+    max-width: 98vw;
   }
 }

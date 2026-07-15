@@ -42,8 +42,8 @@ export function WeatherMap({ lat, lon, cityName }: WeatherMapProps) {
   }
 
   return (
-    <div className={styles.container}>
-      <h3 className={styles.title}>{t('weatherMap.title')}</h3>
+    <section className={styles.container} aria-labelledby="weather-map-title">
+      <h2 id="weather-map-title" className={styles.title}>{t('weatherMap.title')}</h2>
       <MapContainer
         center={[lat, lon]}
         zoom={10}
@@ -59,6 +59,6 @@ export function WeatherMap({ lat, lon, cityName }: WeatherMapProps) {
           <Popup>{cityName}</Popup>
         </Marker>
       </MapContainer>
-    </div>
+    </section>
   );
 }

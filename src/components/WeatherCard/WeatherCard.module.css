@@ -1,9 +1,9 @@
 .weatherCard {
   background: var(--card-bg);
   border-radius: 16px;
-  padding: 32px;
+  padding: clamp(20px, 4vw, 32px);
   box-shadow: var(--card-shadow);
-  max-width: 500px;
+  max-width: min(90vw, 800px);
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
@@ -13,18 +13,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: clamp(16px, 3vw, 24px);
+  gap: clamp(10px, 2vw, 16px);
 }
 
 .cityName {
-  font-size: 32px;
+  font-size: clamp(20px, 5vw, 32px);
   font-weight: 700;
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
   color: var(--text-color);
 }
 
 .country {
-  font-size: 16px;
+  font-size: clamp(14px, 3vw, 16px);
   color: var(--text-secondary);
   margin: 0;
 }
@@ -33,8 +34,8 @@
   background: transparent;
   border: 2px solid var(--input-border);
   border-radius: 8px;
-  font-size: 24px;
-  padding: 8px 12px;
+  font-size: clamp(20px, 4vw, 24px);
+  padding: clamp(8px, 2vw, 12px);
   cursor: pointer;
   transition: all 0.2s;
   color: var(--text-secondary);
@@ -47,129 +48,73 @@
   color: #aa3bff;
 }
 
+.favoriteButton:focus-visible {
+  outline: 2px solid #aa3bff;
+  outline-offset: 2px;
+}
+
 .mainInfo {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: clamp(20px, 4vw, 32px);
 }
 
 .temperature {
-  font-size: 72px;
+  font-size: clamp(40px, 10vw, 72px);
   font-weight: 700;
   color: var(--text-color);
   margin: 0;
 }
 
 .condition {
-  font-size: 20px;
+  font-size: clamp(14px, 4vw, 20px);
   color: var(--text-secondary);
-  margin: 8px 0 0 0;
+  margin: clamp(6px, 1.5vw, 8px) 0 0 0;
 }
 
 .metrics {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: clamp(10px, 2vw, 16px);
 }
 
 .metric {
   background: var(--metric-bg);
-  padding: 16px;
+  padding: clamp(12px, 3vw, 16px);
   border-radius: 8px;
   text-align: center;
 }
 
 .metricLabel {
   display: block;
-  font-size: 14px;
+  font-size: clamp(11px, 3vw, 14px);
   color: var(--text-secondary);
   margin-bottom: 4px;
 }
 
 .metricValue {
   display: block;
-  font-size: 18px;
+  font-size: clamp(14px, 4vw, 18px);
   font-weight: 600;
   color: var(--text-color);
 }
 
 @media (max-width: 768px) {
   .weatherCard {
-    padding: 24px 16px;
+    max-width: 95vw;
   }
 
   .header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
   }
 
   .favoriteButton {
     align-self: flex-end;
   }
-
-  .cityName {
-    font-size: 24px;
-  }
-
-  .temperature {
-    font-size: 48px;
-  }
-
-  .condition {
-    font-size: 16px;
-  }
-
-  .metrics {
-    gap: 12px;
-  }
-
-  .metric {
-    padding: 12px;
-  }
-
-  .metricLabel {
-    font-size: 12px;
-  }
-
-  .metricValue {
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 480px) {
   .weatherCard {
-    padding: 20px 12px;
-  }
-
-  .cityName {
-    font-size: 20px;
-  }
-
-  .country {
-    font-size: 14px;
-  }
-
-  .temperature {
-    font-size: 40px;
-  }
-
-  .condition {
-    font-size: 14px;
-  }
-
-  .metrics {
-    gap: 10px;
-  }
-
-  .metric {
-    padding: 10px;
-  }
-
-  .metricLabel {
-    font-size: 11px;
-  }
-
-  .metricValue {
-    font-size: 14px;
+    max-width: 98vw;
   }
 }

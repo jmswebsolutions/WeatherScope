@@ -35,8 +35,8 @@ export function HourlyForecast({ data }: HourlyForecastProps) {
   };
 
   return (
-    <div className={styles.hourlyForecast}>
-      <h3 className={styles.title}>{t('hourlyForecast.title')}</h3>
+    <section className={styles.hourlyForecast} aria-labelledby="hourly-forecast-title">
+      <h2 id="hourly-forecast-title" className={styles.title}>{t('hourlyForecast.title')}</h2>
       <div className={styles.hourlyList}>
         {hourlyData.map((hour, index) => (
           <div key={index} className={styles.hourlyItem}>
@@ -50,6 +50,6 @@ export function HourlyForecast({ data }: HourlyForecastProps) {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,25 +1,25 @@
 .hourlyForecast {
   background: var(--card-bg);
   border-radius: 16px;
-  padding: 24px;
+  padding: clamp(18px, 4vw, 24px);
   box-shadow: var(--card-shadow);
-  margin-top: 24px;
-  max-width: 500px;
+  margin-top: clamp(20px, 4vw, 32px);
+  max-width: min(90vw, 800px);
   width: 100%;
   box-sizing: border-box;
 }
 
 .title {
-  font-size: 20px;
+  font-size: clamp(16px, 4vw, 20px);
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: clamp(12px, 3vw, 16px);
   color: var(--text-color);
 }
 
 .hourlyList {
   display: flex;
   overflow-x: auto;
-  gap: 16px;
+  gap: clamp(10px, 2vw, 16px);
   padding-bottom: 8px;
   scrollbar-width: thin;
   scrollbar-color: var(--text-tertiary) transparent;
@@ -42,11 +42,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 70px;
-  padding: 12px 8px;
+  min-width: clamp(50px, 12vw, 70px);
+  padding: clamp(8px, 2vw, 12px);
   background: var(--forecast-item-bg);
   border-radius: 8px;
   transition: background-color 0.2s;
+  flex-shrink: 0;
 }
 
 .hourlyItem:hover {
@@ -54,85 +55,34 @@
 }
 
 .time {
-  font-size: 14px;
+  font-size: clamp(11px, 3vw, 14px);
   font-weight: 600;
   color: var(--text-color);
-  margin-bottom: 8px;
+  margin-bottom: clamp(4px, 1vw, 6px);
 }
 
 .icon {
-  font-size: 12px;
+  font-size: clamp(9px, 2.5vw, 12px);
   color: var(--text-tertiary);
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: clamp(4px, 1vw, 6px);
   line-height: 1.2;
 }
 
 .temperature {
-  font-size: 18px;
+  font-size: clamp(14px, 4vw, 18px);
   font-weight: 600;
   color: var(--text-color);
 }
 
 @media (max-width: 768px) {
   .hourlyForecast {
-    padding: 20px 16px;
-  }
-
-  .title {
-    font-size: 18px;
-  }
-
-  .hourlyList {
-    gap: 12px;
-  }
-
-  .hourlyItem {
-    min-width: 60px;
-    padding: 10px 6px;
-  }
-
-  .time {
-    font-size: 12px;
-  }
-
-  .icon {
-    font-size: 10px;
-  }
-
-  .temperature {
-    font-size: 16px;
+    max-width: 95vw;
   }
 }
 
 @media (max-width: 480px) {
   .hourlyForecast {
-    padding: 16px 12px;
-  }
-
-  .title {
-    font-size: 16px;
-    margin-bottom: 12px;
-  }
-
-  .hourlyList {
-    gap: 10px;
-  }
-
-  .hourlyItem {
-    min-width: 50px;
-    padding: 8px 4px;
-  }
-
-  .time {
-    font-size: 11px;
-  }
-
-  .icon {
-    font-size: 9px;
-  }
-
-  .temperature {
-    font-size: 14px;
+    max-width: 98vw;
   }
 }
